@@ -1,0 +1,368 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Microsoft JhengHei;
+}
+
+header {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    float: left;
+}
+
+.topbarL {
+    position: fixed;
+    left: 13.5%;
+    width: 13.5%;
+    height: 40px;
+    padding: 5px;
+    background-color: #FC7C2E;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.topbarL a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.topbarL a:hover {
+    color: rgb(248, 193, 184);
+}
+
+.topbarR {
+    position: fixed;
+    left: 27%;
+    width: 73%;
+    padding: 5px;
+    background-color: #00A64E;
+    text-align: right;
+    padding-right: 30px;
+}
+
+.tbar {
+    display: inline;
+}
+
+.tbarli {
+    list-style-type: none;
+    display: inline;
+    text-align: center;
+    padding: 0px 10px 5px 10px;
+}
+
+.tbarlil {
+    list-style-type: none;
+    display: inline;
+    border-left: 1px solid black;
+    text-align: center;
+    padding: 0px 10px 5px 10px;
+}
+
+.tbar>.tbarlil>a>img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.tbar>.tbarli>a>img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.searchbox {
+    border-radius: 3px;
+    border: 1px solid darkgray;
+    background-color: white;
+    text-align: center;
+    width: 200px;
+    float: right;
+}
+
+.search {
+    border-radius: 3px;
+    width: 80%;
+    border: none;
+    border-right: 1px solid darkgray;
+}
+
+.tbar .tbarlil .searchbox a img {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 13.5%;
+    height: 100%;
+    position: fixed;
+    background-color: #f8f8f8;
+}
+
+.menulogo {
+    margin: 30px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.menulogo img {
+    width: 60%
+}
+
+.amenuitem {
+    color: black;
+    text-decoration: none;
+    width: 100%;
+}
+
+.menuitem {
+    width: 100%;
+    text-align: center;
+    margin: 12px 0;
+}
+
+.menuitem img {
+    margin-left: 25px;
+    width: 4%;
+    padding-bottom: 1px;
+}
+
+.amenuitem:hover {
+    background-color: burlywood;
+}
+
+.content {
+    position: absolute;
+    top: 34px;
+    left: 13.5%;
+    float: left;
+    width: 86.5%;
+}
+
+.contentimg {
+    width: 100%;
+    float: left;
+    background-color: red;
+}
+
+.contentimg img {
+    width: 100%;
+    height: 75vh;
+}
+
+h1 {
+    font-size: 26px;
+    color: #FF473D;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.contentone {
+    width: 100%;
+    float: left;
+    padding: 0 6%;
+    margin-top: 100px;
+}
+
+.contentone img {
+    width: 72%;
+    float: left;
+}
+
+.onebox {
+    width: 25%;
+    float: left;
+    margin-left: 15px;
+}
+
+.onebox img {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.text {
+    font-size: 14px;
+    color: #767676;
+    line-height: 25px;
+}
+
+.time {
+    font-size: 13px;
+    color: #EA5415;
+    line-height: 30px;
+}
+
+.onebox:hover {
+    border: 3px solid #EA5415;
+}
+
+.contenttwo {
+    width: 100%;
+    float: left;
+    padding: 0 6%;
+    margin-top: 100px;
+}
+
+.two {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.twobox {
+    width: 24%;
+}
+
+.twoboxlogo {
+    width: 100%;
+}
+
+.twoboximg {
+    width: 30%;
+    margin: 5px 0;
+}
+
+.headline {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #1f1f1f;
+    font-weight: bold;
+}
+
+.twobox:hover {
+    border: 3px solid #EA5415;
+}
+
+.contentthree {
+    width: 100%;
+    float: left;
+    padding: 0 6%;
+    margin-top: 100px;
+}
+
+.newlist {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.new {
+    height: 50px;
+    width: 100%;
+    padding-left: 10%;
+}
+
+.newm {
+    height: 50px;
+    width: 100%;
+    padding-left: 10%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.newlist a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 50px;
+}
+
+.new:hover,
+.newm:hover {
+    color: burlywood;
+}
+
+.seccontent {
+    padding: 50px 6%;
+    float: left;
+    width: 100%;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.app {
+    width: 30%;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+}
+
+.app hr {
+    margin: 20px 0;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.appbox {
+    width: 30%;
+}
+
+.applogo {
+    margin: 0 20px;
+}
+
+.contentfour {
+    width: 100%;
+    float: left;
+    padding: 0 6%;
+    margin: 50px 0;
+}
+
+.fourbox {
+    width: 30%;
+}
+
+.footer {
+    width: 100%;
+    float: left;
+    padding: 0 6%;
+    margin: 50px 0 10px 0;
+}
+
+.footer img {
+    display: inline;
+}
+
+.fp {
+    font-size: 12px;
+    /*float: left;*/
+}
+
+.fask {
+    font-size: 12px;
+    color: black;
+    text-decoration: none;
+}
+
+.fL {
+    float: left;
+}
+
+.fR {
+    margin-top: 30px;
+    font-size: 12px;
+    color: black;
+    float: right;
+}
