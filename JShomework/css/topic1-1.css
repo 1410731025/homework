@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
+body {
+    width: 100%;
+    background-color: black;
+}
+
+.content {
+    width: 40%;
+    margin: 20px auto;
+    /*text-align: center;*/
+    padding: 12%;
+}
+
+.text {
+    font-size: 16px;
+    color: white;
+    margin: 5px auto;
+}
+
+.divans {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.input {
+    padding: 5px;
+}
+
+.btn {
+    padding: 5px;
+    margin: 5px;
+}
+
+#ans {
+    color: yellow;
+    font-size: 16px;
+}

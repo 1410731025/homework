@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background-color: white;
+}
+
+.keyinbox {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    /*border: solid black 2px;*/
+    background-color: rgba(27, 158, 158, 0.233);
+    border-radius: 5px;
+}
+
+.inputname {
+    padding: 5px;
+    width: 20%;
+    font-size: 15px;
+}
+
+.inputcontent {
+    padding: 5px;
+    width: 20%;
+    font-size: 15px;
+}
+
+.inputinq {
+    width: 12%;
+    float: right;
+    margin: 7px 5px 0 0;
+}
+
+.btn {
+    box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+    background-color: #3d94f6;
+    border-radius: 6px;
+    border: 1px solid #337fed;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #1570cd;
+}
+
+.btn:hover {
+    background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+    background-color: #1e62d0;
+}
+
+.btn:active {
+    position: relative;
+    top: 1px;
+}
+
+.inqbtn {
+    box-shadow: inset 0px 0px 15px 3px #fff6af;
+    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    background-color: #ffec64;
+    border-radius: 17px;
+    border: 1px solid #ffaa22;
+    cursor: pointer;
+    color: #333333;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 6px 13px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffee66;
+    float: right;
+    width: 8%;
+}
+
+.inqbtn:hover {
+    background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+    background-color: #ffab23;
+}
+
+.inqbtn:active {
+    position: relative;
+    top: 1px;
+}
+
+.outputbox {
+    width: 60%;
+    margin: 20px auto;
+}
+
+.table {
+    /*border: black 1px solid;*/
+    width: 100%;
+    border-spacing: 0;
+}
+
+.thead th {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    /*border: black 1px solid;*/
+}
+
+td {
+    padding: 5px;
+}
+
+td:nth-of-type(1),
+th:nth-of-type(1) {
+    width: 10%;
+    text-align: center;
+}
+
+td:nth-of-type(2),
+th:nth-of-type(2) {
+    width: 35%;
+    text-align: center;
+}
+
+td:nth-of-type(3),
+th:nth-of-type(3) {
+    width: 35%;
+    text-align: center;
+}
+
+td:nth-of-type(4),
+th:nth-of-type(4) {
+    width: 20%;
+    text-align: center;
+}
+
+.thead {
+    border-top: black 1px solid;
+    border-bottom: solid 1px black;
+}
+
+.btndel {
+    box-shadow: inset 0px -3px 7px 0px #f29c93;
+    background: linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
+    background-color: #fe1a00;
+    border-radius: 3px;
+    border: 1px solid #d83526;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 9px 23px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #b23e35;
+    margin-left: 5px;
+}
+
+.btndel:hover {
+    background: linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
+    background-color: #ce0100;
+}
+
+.btndel:active {
+    position: relative;
+    top: 1px;
+}
+
+.btnedi {
+    box-shadow: inset 0px -3px 7px 0px #29bbff;
+    background: linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+    background-color: #2dabf9;
+    border-radius: 3px;
+    border: 1px solid #0b0e07;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 9px 23px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #263666;
+    margin-right: 5px;
+}
+
+.btnedi:hover {
+    background: linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+    background-color: #0688fa;
+}
+
+.btnedi:active {
+    position: relative;
+    top: 1px;
+}
