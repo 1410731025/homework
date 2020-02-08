@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/topic2-8.css">
+    <title>留言板</title>
+</head>
+
+<body>
+    <div class="keyinbox">
+        <input type="text" placeholder="名稱" class="inputname" id="name">
+        <input type="text" placeholder="內容" class="inputcontent" id="content">
+        <button class="btn" onclick="save()">儲存</button>
+        <button class="inqbtn" onclick="inq()">查詢</button>
+        <input type="text" placeholder="輸入欲查詢的ID" class="inputinq" id="inq">
+    </div>
+    <div class="outputbox">
+        <table class="table" id="table">
+            <thead>
+                <tr class="thead">
+                    <th>ID</th>
+                    <th>名稱</th>
+                    <th>內容</th>
+                    <th>動作</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script src="js/topic2-8.js"></script>
+</body>
+
+</html>

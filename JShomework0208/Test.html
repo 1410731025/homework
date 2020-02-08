@@ -1,0 +1,225 @@
+<html>
+<script language="javascript">
+    //为每个Td添加双击事件  
+    function ReWritable() {
+        var tbmian = document.getElementById("tbmain");
+        //循环，为每行每列添加双击事件，但是，第一行（thead）与最后一行（tfoot）不添加。  
+        for (var i = 1; i < tbmain.rows.length - 1; i++) {
+            for (var j = 1; j < tbmain.rows[i].cells.length; j++) //第一列不添加  
+            {
+                tbmain.rows[i].cells[j].ondblclick = TdDoubleClick;
+            }
+        }
+    }
+    //定义td的双击事件，为其添加文本框，使用用户可以输入。  
+    function TdDoubleClick() {
+        getOldChange(); //添加旧的数据oldRecord  
+        //首先判断是不是该方格已经存在文本框，如果存在，则返回，不重复添加文本框。如果不存在，则添加。  
+        var tdcag = document.getElementById("tdcag");
+        var tdid = null;
+        var txtid = null;
+        //var curtd=window.event.srcElement;//就是指向触发事件的元素，他是什么就有什么的属性  
+        if (tdcag != null) //已经存在，返回。  
+        {
+            return;
+        }
+        //不存在，则添加  
+        tdid = window.event.srcElement; //就是指向触发事件的元素，他是什么就有什么的属性  
+        tdtxt = tdid.innerText;
+        tdtxt = Trim(tdtxt);
+        var str = "<div id='tdcag'><input type='text' οnblur='ChangeTdText();' id='txtId' value='" + tdtxt + "'>";
+        str += "<input type='hidden' id='tdInitValue' value='" + tdtxt + "'>";
+        str += "</div>";
+        tdid.innerHTML = str;
+        //使文本框获得焦点。          
+        document.getElementById("txtId").focus();
+        var ctr = document.getElementById("txtId").createTextRange(); //  
+        ctr.collapse(false); //将插入点移动到当前范围的开始或结尾。  
+        ctr.select();
+    }
+    //去除字符串前后的空格。  
+    function Trim(str) {
+        return str.replace(/(^\s*)|(\s*$)/g, "");
+    }
+    //定义KeyPress按下时的事件，如果是ESC键，则取消更改，恢复为更改前的值。  
+    document.onkeypress = function EscKeyPress() {
+            if (event.keyCode == 27) {
+                CancelTdChanged();
+                return;
+            }
+        }
+        //取消更改，  
+    function CancelTdChanged() {
+        var tdInitValue = document.getElementById("tdInitValue");
+        var tdtxt = tdInitValue.value;
+        var tdid = document.getElementById("tdcag").parentNode;
+        tdid.innerText = Trim(tdtxt);
+        getNewChange(); //添加新的数据（未更改）  
+    }
+    //确定更改，  
+    function ChangeTdText() {
+
+        var txtId = document.getElementById("txtId");
+        if (txtId == null) {
+            return;
+        }
+        var tdid = document.getElementById("tdcag").parentNode;
+        tdid.innerText = Trim(txtId.value);
+        // alert(rowID);  
+        getNewChange(); //添加新的数据（已更改）  
+
+        return;
+    }
+    var changeID = 0;
+    var rowID;
+    var changeArr = new Array();
+    var oldRecord = new Array();
+    var newnewRecord = new Array();
+
+    function show() {
+        compare()
+        var otstr = "<table border='1'>";
+        var ojstr = "{check:[";
+        var ntstr = "<table border='1'>";
+        var njstr = "{check:[";
+        for (var i = 0; i < changeArr.length; i++) {
+            otstr += oldRecord[i];
+            ojstr += changeToJson(oldRecord[i]) + ",";
+            ntstr += newRecord[i];
+            njstr += changeToJson(newRecord[i]) + ",";
+        }
+        ojstr += "]}";
+        njstr += "]}";
+        otstr += "</table>";
+        ntstr += "</table>";
+
+        ojstrojstr = ojstr.replace(/,]}/g, "]}");
+        njstrnjstr = njstr.replace(/,]}/g, "]}");
+        var contain = document.getElementById("div2");
+        contain.innerHTML = otstr + "\n" + ojstr + "\n";
+        var contain = document.getElementById("divnew");
+        contain.innerHTML = ntstr + "\n" + njstr;
+    }
+
+    function compare() { //去除修改的数据（又该回原值）  
+        for (var i = 0; i < changeArr.length; i++) {
+            //alert(oldRecord[i]+"/"+newRecord[i]);  
+            if (oldRecord[i] == newRecord[i]) {
+                changeArr[i] = "";
+                oldRecord[i] = "";
+                newRecord[i] = "";
+
+            }
+        }
+    }
+
+    function changeToJson(str) {
+        if (str == undefined)
+            return;
+        strstr = str.replace(/<tr>/g, "{");
+        strstr = str.replace(/<\/tr>/g, "}");
+        strstr = str.replace(/<td>/g, "");
+        strstr = str.replace(/<\/td>/g, ",");
+        strstr = str.replace(/,}/g, "}");
+        return str;
+    }
+
+    function getOldChange() {
+        var flag = true;
+        for (var i = 0; i < changeArr.length; i++) {
+            if (rowID == changeArr[i]) {
+                flag = false;
+            }
+        }
+        if (flag == true) {
+            changeArr[changeID] = rowID;
+            oldRecord[changeID] = getOneRecord(rowID);
+            changeID++;
+        }
+
+    }
+
+    function getNewChange() {
+        //alert(newRecord[changeID-1]+"\n"+getOneRecord(rowID));  
+        newRecord[changeID - 1] = getOneRecord(rowID);
+        //alert(newRecord[changeID-1]);  
+    }
+
+    function getOneRecord(rid) {
+        t = document.getElementById("tbmain");
+        row_num = t.rows.length;
+        cell_num = t.rows[0].cells.length;
+        var str = new String("");
+        for (var i = 0; i <= row_num; i++) { //  
+            if (rid == i) {
+                str = "<tr>";
+                for (var j = 0; j <= cell_num; j++) {
+                    str += "<td>" + t.rows[i].cells[j].innerHTML + "</td>";
+                }
+                str += "</tr>";
+            }
+        }
+        return str;
+    }
+
+    function leave() {
+        var msg = "leave";
+        return msg;
+    }
+    //window.onbeforeunload=leave;  
+    //window.onunload=leave;
+</script>
+
+<body onload="ReWritable();">
+    <table id="tbmain" style="width:100%;" border="1">
+        <thead>
+            <tr>
+                <td>thead,thead,thead</td>
+                <td>thead,thead,thead</td>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td>
+                    tfoot,tfoot,tfoot
+                </td>
+                <td>
+                    tfoot,tfoot,tfoot
+                </td>
+            </tr>
+        </tfoot>
+        <tr onMouseDown="rowID=this.cells.item(0).innerHTML;">
+            <td style="display:none">
+                1
+            </td>
+
+            <td>12</td>
+
+            <td>13</td>
+
+        </tr>
+        <tr onMouseDown="rowID=this.cells.item(0).innerHTML;">
+            <td style="display:none">
+                2
+            </td>
+
+            <td>22</td>
+
+            <td>23</td>
+        </tr>
+        <tr onMouseDown="rowID=this.cells.item(0).innerHTML;">
+            <td style="display:none">
+                3
+            </td>
+
+            <td>32</td>
+
+            <td>33</td>
+        </tr>
+    </table>
+    <input type="button" onclick="show();" value="show" />
+    <div id="div2"></div>
+    <div id="divnew"></div>
+</body>
+
+</html>
