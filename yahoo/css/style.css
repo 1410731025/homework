@@ -8,7 +8,6 @@ body {
     background-color: #fafafc;
     width: 100%;
     min-width: 1080px;
-    max-width: 1800px;
     font-family: 微軟正黑體;
 }
 
@@ -29,16 +28,17 @@ header {
     padding-top: 2px;
     padding-bottom: 2px;
     margin-bottom: 12px;
-    min-width: 1080px;
-    max-width: 1800px;
+    min-width: 1216px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .navtext {
-    width: 80%;
+    width: 1216px;
     margin: 0px auto;
     margin-bottom: 2px;
-    min-width: 1080px;
-    max-width: 1800px;
+    min-width: 1216px;
 }
 
 .navul {
@@ -163,12 +163,11 @@ header {
 
 .topbar {
     width: 80%;
-    height: 80px;
     margin: 0 auto;
+    height: 80px;
     margin-top: 10px;
-    min-width: 1080px;
-    max-width: 1800px;
-    /*background-color: red;*/
+    min-width: 1219px;
+    max-width: 1222px;
 }
 
 .logo {
@@ -290,25 +289,33 @@ header {
 }
 
 .content {
-    min-width: 1080px;
-    width: 80%;
-    margin: 0 auto;
+    min-width: 1224px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
 .contentL {
-    width: 13%;
+    width: 150px;
 }
 
 .contentLtable {
     border-spacing: 0;
+    width: 150px;
 }
 
 .contentLtable tr td {
-    padding: 6px 4px;
+    width: 75px;
+    line-height: 31px;
 }
+
+
+/*.contentLtable tr td:nth-child(4)::before {
+    position: absolute;
+    content: "________";
+    border-top: 0.5px solid rgba(0, 0, 0, 0.2);
+}*/
 
 .contentLtable tr td a {
     font-size: 14px;
@@ -319,15 +326,15 @@ header {
 .tableline::before {
     position: absolute;
     content: "________";
-    margin: -2px 0 0 0;
+    line-height: 40px;
     color: #fafafc;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: 0.5px solid rgba(0, 0, 0, 0.2);
 }
 
 .contentM {
-    width: 55%;
-    padding: 0px 15px;
-    min-width: 630px;
+    width: 635px;
+    margin: 5px 20px;
+    min-width: 635px;
 }
 
 .new1 {
@@ -337,7 +344,7 @@ header {
 }
 
 .lightorange {
-    width: 15%;
+    width: 84px;
     height: 36px;
     background-color: #f99c23;
     text-align: center;
@@ -353,7 +360,7 @@ header {
 
 .slash {
     border-bottom: 36px solid transparent;
-    width: 1%;
+    width: 15px;
     height: 34px;
     border-left: 15px solid rgb(249, 156, 36);
     background-color: rgb(255, 108, 15);
@@ -362,7 +369,7 @@ header {
 }
 
 .orange {
-    width: 82.5%;
+    width: 535px;
     height: 36px;
     background-color: #ff6c0f;
     float: left;
@@ -375,10 +382,11 @@ header {
 }
 
 .new2 {
-    width: 100%;
+    width: 635px;
     border: 1px solid rgb(163, 163, 163, 0.5);
     float: left;
     background-color: white;
+    /*min-width: 643px;*/
 }
 
 .new2_lock {
@@ -392,22 +400,21 @@ header {
 .new2ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: left;
     float: left;
     width: 100%;
     list-style-type: none;
     background-color: #f4f4f4;
     text-align: center;
-    padding-right: 12px;
     border-bottom: 1px solid rgb(163, 163, 163, 0.3);
 }
 
 .new2ul a li {
     list-style-type: none;
     text-align: center;
-    padding: 10px 30px;
+    padding: 10px 0px;
     height: 42px;
-    width: 105px;
+    width: 103px;
     float: left;
     margin: -1px 0px -1px -1px;
 }
@@ -437,7 +444,7 @@ header {
 }
 
 .new2img {
-    width: 58%;
+    width: 350px;
     float: left;
 }
 
@@ -470,7 +477,7 @@ header {
 }
 
 .new3 {
-    width: 100%;
+    width: 635px;
     margin-top: 10px;
     float: left;
     border: 1px solid rgba(150, 150, 150, 0.5);
@@ -590,26 +597,27 @@ header {
 }
 
 .contentR {
-    width: 30%;
+    width: 374px;
+    margin-top: 5px;
 }
 
 .video {
-    width: 100%;
+    width: 374px;
     margin-bottom: 15px;
 }
 
 .video img {
-    width: 100%;
+    width: 374px;
 }
 
 .AD {
     float: left;
-    width: 100%;
+    width: 374px;
     border: 1px solid rgba(150, 150, 150, 0.5);
 }
 
 .ADtitle {
-    width: 100%;
+    width: 374px;
     float: left;
     background-color: #f2f2f4;
     border-bottom: 1px solid rgba(150, 150, 150, 0.1);
