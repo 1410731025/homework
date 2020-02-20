@@ -143,7 +143,7 @@ header {
 }
 
 .contentL {
-    position: relative;
+    position: sticky;
     top: 0px;
     left: 0px;
     width: 180px;
@@ -388,7 +388,7 @@ header {
 }
 
 .contentRR {
-    position: relative;
+    position: sticky;
     width: 308px;
 }
 
