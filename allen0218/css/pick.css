@@ -4,3 +4,389 @@
     box-sizing: border-box;
     font-family: 微軟正黑體;
 }
+
+body {
+    width: 100%;
+    background-color: rgb(246, 246, 246);
+    min-width: 1060px;
+}
+
+header {
+    width: 100%;
+    background-color: #006AC6;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .3);
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 4;
+}
+
+.topbar {
+    width: 1060px;
+    height: 45px;
+    padding-left: 5px;
+    line-height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.barL {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.logo {
+    width: 68px;
+    height: 30px;
+    margin-top: 7px;
+}
+
+.blogbon {
+    vertical-align: text-top;
+    margin-left: -10px;
+}
+
+.barLimg {
+    margin-right: 60px;
+}
+
+.barline::after {
+    content: " ";
+    position: absolute;
+    height: 28px;
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    margin-left: 26px;
+    margin-top: 8px;
+}
+
+.barR {
+    list-style-type: none;
+}
+
+.barR li {
+    list-style-type: none;
+    display: inline-block;
+    vertical-align: middle;
+    border-left: 1px solid hsla(0, 0%, 100%, .15);
+    padding: 0 15px;
+    height: 100%;
+}
+
+.barRline {
+    border-right: 1px solid hsla(0, 0%, 100%, .15);
+}
+
+.barR li img {
+    width: 24px;
+    height: 24px;
+    vertical-align: text-top;
+}
+
+.barR li span {
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.content {
+    width: 1060px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contentL {
+    width: 200px;
+}
+
+.contentM {
+    width: 530px;
+}
+
+.contentR {
+    width: 300px;
+}
+
+.contentLimg {
+    width: 100%;
+}
+
+.myfocus {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
+    position: sticky;
+    top: 20px;
+    will-change: transform;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.myfocus_title {
+    position: relative;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: black;
+    padding: 0px 12px;
+    border-bottom: 0px;
+}
+
+.myfocus_title::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0px;
+    width: 3px;
+    height: 22px;
+    background-color: rgb(62, 133, 219);
+    border-radius: 1.5px;
+}
+
+.myfocus_text {
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 35px;
+    color: black;
+}
+
+.newpost {
+    padding: 10px 20px;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    cursor: pointer;
+}
+
+.newpost_head {
+    font-size: 18px;
+    color: #000;
+    line-height: 40px;
+}
+
+.newpost_body {
+    border-bottom: 1px solid #F2F2F2;
+}
+
+.newpost_foot {
+    padding-top: 10px;
+    border-top: 1px solid #f2f2f2;
+}
+
+.newpost_head img {
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
+}
+
+.newpost_body input {
+    border: none;
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+}
+
+.newpost_foot button {
+    color: #dba393;
+    background-color: #FFF;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #dba393;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.newpost_foot button:hover {
+    color: #000;
+    border: 1px solid #000;
+}
+
+.btnimg {
+    margin-right: 5px;
+    width: 18px;
+    height: 18px;
+    vertical-align: top;
+}
+
+.latest_new {
+    height: 40px;
+    padding-left: 18px;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 40px;
+    color: rgb(129, 130, 142);
+}
+
+.post {
+    padding: 10px 20px;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    margin-bottom: 10px;
+}
+
+.post_head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    height: 70px;
+    width: 100%;
+}
+
+.post_body {
+    width: 100%;
+}
+
+.post_foot {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.user {
+    height: 70px;
+}
+
+.focus {
+    align-items: center;
+    line-height: 26px;
+    height: 26px;
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+    border-radius: 6px;
+    border: 1px solid rgb(74, 144, 226);
+    background: rgb(74, 144, 226);
+    width: 76px;
+    text-align: center;
+}
+
+.user img {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-right: 10px;
+}
+
+.nametime {
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
+
+.name {
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+}
+
+.time {
+    color: rgb(129, 130, 142);
+    font-size: 13px;
+}
+
+.post_body img {
+    width: 100%;
+}
+
+.good {
+    margin-top: 5px;
+    width: 100%;
+    font-size: 14px;
+    color: rgb(129, 130, 142);
+    text-align: right;
+}
+
+.post_footbtn {
+    line-height: 50px;
+    font-size: 15px;
+    color: rgb(94, 95, 106);
+    cursor: pointer;
+}
+
+.post_footbtn img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.post_footbtn:hover {
+    color: #000;
+}
+
+.find {
+    width: 100%;
+    color: rgb(74, 74, 74);
+    font-size: 13px;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 20px 25px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
+}
+
+.find_title {
+    font-size: 14px;
+    color: black;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    padding: 0px 12px;
+}
+
+.find_title::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0px;
+    width: 3px;
+    height: 22px;
+    background-color: rgb(62, 133, 219);
+    border-radius: 1.5px;
+}
+
+.find_item {
+    width: 100%;
+    border: 1px solid #F2F2F2;
+    margin-bottom: 20px;
+}
+
+.find_item img {
+    width: 100%;
+}
+
+.find_btn {
+    position: relative;
+    top: -5px;
+    left: 10px;
+    align-items: center;
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    border-radius: 6px;
+    border-width: 1px solid rgb(74, 144, 226);
+    background: rgb(74, 144, 226);
+}
+
+.find_footer {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: black;
+}
